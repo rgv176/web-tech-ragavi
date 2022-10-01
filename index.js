@@ -1,9 +1,11 @@
 const http = require("http");
 const handles = require("./handles");
+const server = http.createServer(handles.serverHandle);
+server.listen(8080);
 /*
 1) console.log("hello node.js");
 
-2) const http = require("http");
+3)
 
 http
   .createServer(function (req, res) {
@@ -12,7 +14,7 @@ http
   })
   .listen(8080);
 
-3)
+4)
 
 const content =
   "<!DOCTYPE html>" +
@@ -26,7 +28,11 @@ const content =
   "    </body>" +
   "</html>";
 
-;*/
+;
 
-const server = http.createServer(handles.serverHandle);
-server.listen(8080);
+5)
+All the content after "/" is printed in the terminal when we used ("parse...pathname");
+6) 
+In the terminal we have the name and the email differentiated as 'name'=.... and 'email'=...
+
+*/
