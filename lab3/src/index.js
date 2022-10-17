@@ -9,6 +9,10 @@ const routerComments = require("./routes/comments");
 app.use("/articles", routerArticles);
 app.use("/comments", routerComments);
 
+app.get("/", (req, res) => {
+  res.send("Hello everyone !");
+});
+
 app.listen(port, () => {
   console.log("app run");
 });
