@@ -1,4 +1,8 @@
+import { useRouter } from "next/router";
+
 function ArticleDetail() {
-  return <h1>Details of Article</h1>;
+  const Router = useRouter();
+  const articleID = Router.query.articleID;
+  return <h1>Details of Article {articleID}</h1>;
 }
 export default ArticleDetail;
