@@ -23,4 +23,15 @@ router.get("/:articleID/comments", (req, res) => {
   else res.sendStatus(404);
 });
 
+router.get("/:articleID/comments/:commentID", (req, res) => {
+  const comment = db.comments.find(
+    (comment) => comment.articleId == req.params.articleID
+  );
+  if (comment) {
+    const com = db.comments.find((com) => com.id == req.params.commentID);
+    if (com) res.send(com);
+    else res.sendStatus(404);
+  } else res.sendStatus(404);
+});
+
 module.exports = router;
