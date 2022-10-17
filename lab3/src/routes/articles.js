@@ -34,4 +34,16 @@ router.get("/:articleID/comments/:commentID", (req, res) => {
   } else res.sendStatus(404);
 });
 
+/*router.post("/:articleID/comments", (req, res) => {
+  const data = new db.comments({
+    id: req.body.id,
+    timestamp: req.body.timestamp,
+    content: req.body.content,
+    articleId: req.body.articleId,
+    author: req.body.author,
+  });
+});
+
+NOT WORKING*/
+
 module.exports = router;
