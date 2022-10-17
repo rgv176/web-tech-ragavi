@@ -26,6 +26,9 @@ function ArticleList() {
           <a>Article 4</a>
         </Link>
       </h2>
+      <footer>
+        <p>Author: Ragavi and Claude</p>
+      </footer>
     </>
   );
 }

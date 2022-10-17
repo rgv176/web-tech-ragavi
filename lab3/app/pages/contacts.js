@@ -7,6 +7,9 @@ function Contact() {
       <Link href="/">
         <a>Home</a>
       </Link>
+      <footer>
+        <p>Author: Ragavi and Claude</p>
+      </footer>
     </>
   );
 }
