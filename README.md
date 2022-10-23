@@ -16,13 +16,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Instruction:
 **LAB2 DONE**
+**change direction tpo lab2**
 In the terminal, type "node index.js" to run the code related to the last question.
 All the other questions are in the form of comments.
 
 **LAB3**
 Post request has to be done -> check the README file associated
 
-**LAB4(in the folder app of LAB3)**
+**LAB4**
 All done -> check the README file associated
 
 #### Authors
