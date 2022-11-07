@@ -1,7 +1,10 @@
 import Link from "next/link";
+import Footer from "../component/Footer.js";
+import Header from "../component/Header.js";
 function About() {
   return (
     <>
+      <Header />
       <h2>About</h2>
 
       <p>
@@ -13,14 +16,7 @@ function About() {
         cupiditat non proident, sunt in culpa qui officia deserunt mollit anim
         id est labor.
       </p>
-      <h3>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </h3>
-      <footer>
-        <p>Author: Ragavi and Claude</p>
-      </footer>
+      <Footer />
     </>
   );
 }

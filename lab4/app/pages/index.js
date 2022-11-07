@@ -19,9 +19,6 @@ function Home() {
           <a>Contacts</a>
         </Link>
       </h2>
-      <footer>
-        <p>Author: Ragavi and Claude</p>
-      </footer>
     </div>
   );
 }
