@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Footer from "../component/Footer.js";
+import Header from "../component/Header.js";
 
 function Contact() {
   return (
     <>
+      <Header />
       <h2>Contacts</h2>
 
       <p>
@@ -19,6 +22,7 @@ function Contact() {
           <a>Home</a>
         </Link>
       </h3>
+      <Footer />
     </>
   );
 }

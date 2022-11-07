@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Footer from "../../component/Footer.js";
+import Header from "../../component/Header.js";
 
 function ArticleList() {
   return (
     <>
+      <Header />
       <h1>
         <Link href="/">
           <a>Home</a>
@@ -51,9 +54,7 @@ function ArticleList() {
         voluptatibus maiores alias consequatur aut perferendis doloribus
         asperiores repellat.
       </p>
-      <footer>
-        <p>Author: Ragavi and Claude</p>
-      </footer>
+      <Footer />
     </>
   );
 }

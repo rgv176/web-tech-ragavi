@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="flex bg-slate-200 px-10 py-2">
-      <Link href={`/`}>
+      <Link href={"/"}>
         <a>Home</a>
       </Link>
       <ul className="flex gap-5">

@@ -1,25 +1,29 @@
 import Link from "next/link";
+import Footer from "../component/Footer.js";
+import Header from "../component/Header.js";
 
 function Home() {
   return (
-    <div>
+    <>
+      <Header />
       <h1> MENU </h1>
       <h2>
         <Link href="/articles">
-          <a>Articles</a>
+          <a>The articles</a>
         </Link>
       </h2>
       <h2>
         <Link href="/about">
-          <a>About</a>
+          <a>About us</a>
         </Link>
       </h2>
       <h2>
         <Link href="/contacts">
-          <a>Contacts</a>
+          <a>Contact us</a>
         </Link>
       </h2>
-    </div>
+      <Footer />
+    </>
   );
 }
 
