@@ -1,28 +1,33 @@
 import Link from "next/link";
-import Footer from "../component/Footer.js";
-import Header from "../component/Header.js";
+import Layout from "../component/Layout.js";
 
 function Home() {
   return (
     <>
-      <Header />
-      <h1> MENU </h1>
-      <h2>
-        <Link href="/articles">
-          <a>The articles</a>
-        </Link>
-      </h2>
-      <h2>
-        <Link href="/about">
-          <a>About us</a>
-        </Link>
-      </h2>
-      <h2>
-        <Link href="/contacts">
-          <a>Contact us</a>
-        </Link>
-      </h2>
-      <Footer />
+      <Layout>
+        <h1 class="text-2xl px-10 py-2"> MENU </h1>
+        <h2>
+          <Link href="/articles">
+            <a class="px-3 text-teal-900 text-2xl underline underline-offset-2  ">
+              The articles
+            </a>
+          </Link>
+        </h2>
+        <h2>
+          <Link href="/about">
+            <a class=" px-3 text-teal-900 text-2xl underline underline-offset-2 ">
+              About us
+            </a>
+          </Link>
+        </h2>
+        <h2>
+          <Link href="/contacts">
+            <a class="px-3 text-teal-900 text-2xl underline underline-offset-2 ">
+              Contact us
+            </a>
+          </Link>
+        </h2>
+      </Layout>
     </>
   );
 }
