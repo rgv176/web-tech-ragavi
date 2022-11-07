@@ -7,7 +7,7 @@ TODO
 ### Usage
 
 Instruction:
-**TO RUN LAB4(link pages) PLEASE CHANGE DIRECTION TO APP AND RUN "npm run dev" IN THE TERMINAL**
+**TO RUN LAB4&5(link pages) PLEASE CHANGE DIRECTION TO APP AND RUN "npm run dev" IN THE TERMINAL**
 
 #### Authors
 
