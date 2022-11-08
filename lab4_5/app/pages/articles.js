@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Layout from "../../component/Layout.js";
+import Layout from "../component/Layout.js";
 
-function ArticleList({ articles }) {
+export default function ArticleList({ articles }) {
   return (
     <>
       <Layout>
@@ -23,4 +23,12 @@ function ArticleList({ articles }) {
     </>
   );
 }
-export default ArticleList;
+export async function getStaticProps(ctx) {
+  const response = await fetch(`http://localhost:3000/api/articles`);
+  const articles = await response.json();
+  return {
+    props: {
+      articles: articles,
+    },
+  };
+}
