@@ -2,7 +2,7 @@ import Layout from "../../component/Layout.js";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function Articles({ article }) {
+export default function Article({ article }) {
   return (
     <Layout>
       <h1 className='class="w-full px-20 py-4 text-2xl underline underline-offset-8'>
