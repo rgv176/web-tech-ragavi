@@ -1,35 +1,30 @@
+import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/Layout.js";
 
-function Home() {
+export default function Home() {
   return (
-    <>
-      <Layout>
-        <h1 class="text-2xl px-10 py-2"> MENU </h1>
-        <h2>
-          <Link href="/articles">
-            <a class="px-3 text-teal-900 text-2xl underline underline-offset-2  ">
-              The articles
-            </a>
-          </Link>
-        </h2>
-        <h2>
-          <Link href="/about">
-            <a class=" px-3 text-teal-900 text-2xl underline underline-offset-2 ">
-              About us
-            </a>
-          </Link>
-        </h2>
-        <h2>
-          <Link href="/contacts">
-            <a class="px-3 text-teal-900 text-2xl underline underline-offset-2 ">
-              Contact us
-            </a>
-          </Link>
-        </h2>
-      </Layout>
-    </>
+    <Layout>
+      <Head>
+        <title>WebTech</title>
+        <meta
+          name="description"
+          content="Web technologies blogging application"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <h1 className="wt-title">Welcome to WebTech</h1>
+      <ul>
+        <li>
+          <Link href="/articles">View our articles</Link>
+        </li>
+        <li>
+          <Link href="/about">About us</Link>
+        </li>
+        <li>
+          <Link href="/contacts">Contact us</Link>
+        </li>
+      </ul>
+    </Layout>
   );
 }
-
-export default Home;

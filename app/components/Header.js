@@ -12,13 +12,6 @@ export default function Header() {
     <header className="flex bg-slate-200 px-10 py-2">
       <Link href={`/`}>
         <a className="flex-grow flex items-center">
-          <Image
-            src="/adaltas.svg"
-            className="cursor-pointer h-6 mr-5"
-            alt="Adaltas Logo"
-            width={25}
-            height={25}
-          />
           <span className="rounded py-1 px-2 hover:bg-slate-600 hover:text-slate-100">
             Web technologies
           </span>
