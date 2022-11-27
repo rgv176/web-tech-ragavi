@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-First, run the development server:
+First, change direction to app and run the development server:
 
 ```bash
 npm run dev
@@ -21,13 +21,19 @@ In the terminal, type "node index.js" to run the code related to the last questi
 All the other questions are in the form of comments.
 
 **LAB3**
-Post request has to be done -> check the README file associated
+done
 
 **LAB4**
-All done -> check the README file associated
+done
 
 **LAB5**
-All done
+done
+
+**LAB6**
+done
+
+**LAB7**
+done
 
 #### Authors
 
