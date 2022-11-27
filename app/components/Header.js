@@ -14,21 +14,21 @@ export default function Header() {
     fetchData();
   }, []);
   return (
-    <div class="underline underline-offset-4 content-evenly ">
-      <header class="px-10 py-10">
-        <ul className="flex gap-15 text-cyan-700 flex item:start">
-          <li class="text-sm  ">
+    <div className="underline underline-offset-4 content-evenly ">
+      <header className="px-10 py-10">
+        <ul className="flex gap-5">
+          <li className="text-sm  ">
             <Link href="/">
-              <a class="text-sm ">Home</a>
+              <a className="text-sm ">Home</a>
             </Link>
           </li>
-          <li class="text-sm">
+          <li className="text-sm">
             <Link href="/articles">Articles</Link>
           </li>
-          <li class="text-sm">
+          <li className="text-sm">
             <Link href="/about">About us</Link>
           </li>
-          <li class="text-sm">
+          <li className="text-sm">
             <Link href="/contacts">Contact us</Link>
           </li>
           {profile && (

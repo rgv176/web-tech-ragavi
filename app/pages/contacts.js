@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../component/Layout.js";
+import Layout from "../components/Layout.js";
 
 function Contact() {
   return (
