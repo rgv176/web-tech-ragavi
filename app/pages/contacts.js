@@ -1,88 +1,70 @@
-import Link from "next/link";
+import { useState } from "react";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import Head from "next/head";
 import Layout from "../components/Layout.js";
 
-function Contact() {
+export default function Contacts() {
+  const supabase = useSupabaseClient();
+  const [message, setMessage] = useState(null);
+  const onSubmit = async function (e) {
+    e.preventDefault();
+    // Insert contact record into the contacts database
+    // Print a friendly confirmation message
+  };
   return (
-    <>
-      <Layout>
-        <h1 class="w-full px-20 py-4 text-2xl underline underline-offset-8 ">
-          Contacts
-        </h1>
-        <br></br>
-        <p class="px-10 py-2">
-          Lorem pisum dolor sit amet, consectetur adpisci elit, sed eiusmod
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrum exercitationem ullam corporis suscpit laboriosam,
-          nisi ut aliquid ex ea commodi consequatur. Quis aute iure
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <br></br>
-        <div class="mb-6 px-10">
+    <Layout>
+      <Head>
+        <title>WebTech - contact us</title>
+        <meta name="description" content="Don't be shy, drop us an email" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <h1 className="wt-title">Contact</h1>
+      <form className="[&_span]:block grid gap-3" onSubmit={onSubmit}>
+        <div>
           <label>
-            <span>Email </span>
-            <input
-              type="text"
-              name="email"
-              class="w-1/3 px-4 py-2 border border-gray-300 outline-none focus:border-gray-400"
-            />
+            <span>First name</span>
+            <input type="text" name="firstname" />
           </label>
         </div>
-        <br></br>
-        <div class="mb-6 px-10">
+        <div>
           <label>
-            <span>First Name </span>
-            <input
-              type="text"
-              name="firstname"
-              class="w-1/3 px-4 py-2 border border-gray-300 outline-none focus:border-gray-400"
-            />
+            <span>Last name</span>
+            <input type="text" name="lastname" />
           </label>
         </div>
-        <br></br>
-        <div class="mb-6 px-10">
+        <div>
           <label>
-            <span>Last Name </span>
-            <input
-              type="text"
-              name="lastname"
-              class="w-1/3 px-4 py-2 border border-gray-300 outline-none focus:border-gray-400"
-            />
+            <span>Email</span>
+            <input type="text" name="email" />
           </label>
         </div>
-        <br></br>
-        <div class="mb-6 px-10">
+        <div>
           <label>
-            <span>Phone Number </span>
-            <input
-              type="text"
-              name="number"
-              class="w-1/3 px-4 py-2 border border-gray-300 outline-none focus:border-gray-400"
-            />
+            <span>Message</span>
+            <textarea name="message" />
           </label>
         </div>
-        <br></br>
-        <div class="mb-6 px-10">
-          <span>Problem: </span>
-          <textarea
-            name="problem"
-            class="w-6/12 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-            placeholder="Please tell us the problem in a few sentences"
-          />
-        </div>
-        <br></br>
-        <div class="mb-6 px-10">
-          <button
-            type="submit"
-            class="w-6/12 px-2 py-4 text-white bg-slate-600 rounded-md  focus:bg-slate-500 focus:outline-none "
-          >
-            Submit
+        <div>
+          <button className="rounded py-1 px-3 text-white bg-slate-500 hover:bg-blue-500">
+            Send
           </button>
         </div>
-      </Layout>
-    </>
+      </form>
+      {message && (
+        <div
+          aria-label="Overlow below the drawer dialog"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center"
+          onClick={() => setMessage(null)}
+          role="dialog"
+        >
+          <div
+            aria-label="Alert pane"
+            className="max-h-[90vh] max-w-[95vw] overflow-auto p-4 prose bg-white"
+          >
+            {message}
+          </div>
+        </div>
+      )}
+    </Layout>
   );
 }
-
-export default Contact;
