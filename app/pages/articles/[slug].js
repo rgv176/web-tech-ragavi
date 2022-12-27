@@ -1,10 +1,49 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
-import Link from "next/link";
+import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import Layout from "../../components/Layout.js";
 import { supabase } from "../api/supabase";
 
 export default function Article({ article }) {
+  const initialState = {
+    content: "",
+  };
+  const supabase = useSupabaseClient();
+  const [articleData, setArticleData] = useState(initialState);
+  const [message, setMessage] = useState(null);
+  const user = useUser();
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    setArticleData({ ...articleData, [e.target.name]: e.target.value });
+  };
+
+  const createArticle = async () => {
+    const { data, error } = await supabase
+      .from("comments")
+      .insert([
+        {
+          id_articles: article?.id,
+          content: articleData.content,
+          user_email: user?.email.toLowerCase(),
+          user_id: user?.id,
+        },
+      ])
+      .single();
+    if (error) {
+      setMessage("Sorry, an unexpected error occured. Be sure to be login !");
+    } else {
+      setMessage(
+        <div>
+          <h2 className="text-center mt-3">Confirmation</h2>
+          <p>Thank you for adding an article.</p>
+        </div>
+      );
+      setArticleData(initialState);
+      router.push("/articles");
+    }
+  };
   return (
     <Layout>
       <Head>
@@ -27,6 +66,47 @@ export default function Article({ article }) {
           ))}
         </ul>
       </div>
+      <form className="[&_span]:block grid gap-3">
+        <div>
+          <label>
+            <span>Comment</span>
+            <input
+              type="text"
+              name="content"
+              onChange={handleChange}
+              className="dark:text-black"
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>{user?.email}</span>
+          </label>
+        </div>
+        <div>
+          <button
+            className="rounded py-1 px-3 text-white bg-slate-500 hover:bg-blue-500"
+            onClick={createArticle}
+          >
+            Create comment
+          </button>
+        </div>
+      </form>
+      {message && (
+        <div
+          aria-label="Overlow below the drawer dialog"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center"
+          onClick={() => setMessage(null)}
+          role="dialog"
+        >
+          <div
+            aria-label="Alert pane"
+            className="max-h-[90vh] max-w-[95vw] overflow-auto p-4 prose bg-white"
+          >
+            {message}
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }

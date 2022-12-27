@@ -36,14 +36,14 @@ export default function CreateArticles() {
     if (error) {
       setMessage("Sorry, an unexpected error occured. Be sure to be login !");
     } else {
-      setArticleData(initialState);
-      router.push("/articles");
       setMessage(
         <div>
           <h2 className="text-center mt-3">Confirmation</h2>
           <p>Thank you for adding an article.</p>
         </div>
       );
+      setArticleData(initialState);
+      router.push("/articles");
     }
   };
 
