@@ -13,7 +13,7 @@ export default function Article({ article }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="wt-title">{article.title}</h1>
-      <p>{article.message}</p>
+      <p class>{article.message}</p>
     </Layout>
   );
 }
@@ -38,7 +38,7 @@ export async function getStaticPaths(ctx) {
   let { data, error, status } = await supabase.from("articles").select(`slug`);
   if (!error) articles = data; // handle errors
   return {
-    paths: articles.map((article) => `/articles/${article.slug}`),
+    paths: articles.map(({ slug }) => ({ params: { slug: slug || "404" } })),
     fallback: false,
   };
 }
