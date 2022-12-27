@@ -14,6 +14,19 @@ export default function Article({ article }) {
       </Head>
       <h1 className="wt-title">{article.title}</h1>
       <p class>{article.message}</p>
+      <div className="my-10 ">
+        <h2 className="wt-title">Comments</h2>
+        <ul>
+          {article.comments.map((comment) => (
+            <li key={comment.content} className="my-5">
+              <h2 className="font-bold mb-1">
+                <p>{comment.content}</p>
+              </h2>
+              <p>{comment.user_email}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </Layout>
   );
 }
@@ -22,7 +35,7 @@ export async function getStaticProps(ctx) {
   let article = {};
   let { data, error, status } = await supabase
     .from("articles")
-    .select(`id, slug, message, title`)
+    .select(`id, slug, message, title,comments(user_email,content)`)
     .eq("slug", ctx.params.slug)
     .single();
   if (!error) article = data; // handle errors
