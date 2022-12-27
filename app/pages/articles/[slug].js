@@ -31,18 +31,16 @@ export default function Article({ article }) {
         },
       ])
       .single();
-    if (error) {
+    if (error)
       setMessage("Sorry, an unexpected error occured. Be sure to be login !");
-    } else {
-      setMessage(
-        <div>
-          <h2 className="text-center mt-3">Confirmation</h2>
-          <p>Thank you for adding an article.</p>
-        </div>
-      );
-      setArticleData(initialState);
-      router.push("/articles");
-    }
+
+    setMessage(
+      <div>
+        <h2 className="text-center mt-3">Confirmation</h2>
+        <p>Thank you for adding an article.</p>
+      </div>
+    );
+    router.push("/");
   };
 
   const deleteArticle = async () => {
@@ -53,6 +51,8 @@ export default function Article({ article }) {
     if (error) throw error;
     router.push("/");
   };
+
+  const updateArticle = async () => {};
   return (
     <Layout>
       <Head>
