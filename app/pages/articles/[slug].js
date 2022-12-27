@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
@@ -44,15 +44,37 @@ export default function Article({ article }) {
       router.push("/articles");
     }
   };
+
+  const deleteArticle = async () => {
+    const { data, error } = await supabase
+      .from("articles")
+      .delete()
+      .eq("id", article.id);
+    if (error) throw error;
+    router.push("/");
+  };
   return (
     <Layout>
       <Head>
-        <title>WebTech - {article.title}</title>
+        <title>WebTech</title>
         <meta name="description" content="WebTech articles page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="wt-title">{article.title}</h1>
       <p class>{article.message}</p>
+      {user ? (
+        <div className="inline-flex rounded-md shadow-sm" role="group">
+          <button className="bg-transparent hover:bg-blue-500 text-grey-700 font-semibold hover:text-white py-2 px-4 border border-grey-500 hover:border-transparent rounded">
+            Update
+          </button>
+          <button
+            className="bg-transparent hover:bg-blue-500 text-grey-700 font-semibold hover:text-white py-2 px-4 border border-grey-500 hover:border-transparent rounded"
+            onClick={deleteArticle}
+          >
+            Delete
+          </button>
+        </div>
+      ) : null}
       <div className="my-10 ">
         <h2 className="wt-title">Comments</h2>
         <ul>
