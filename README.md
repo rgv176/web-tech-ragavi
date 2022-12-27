@@ -1,31 +1,30 @@
-
 # Blogging application - ECE Webtech project
 
-*presentation, introduction, ...*
+This is a simple CRUD blog of articles and comments, where you can add articles and comments for articles. You can also delete articles when you're login and update it.
 
-## Production 
+## Production
 
-- Vercel URL: https://...
-- Supabase project URL: https://app.supabase.com/project/...
+- Vercel URL: https://vercel.com/rgv176/web-tech-ragavi
+- Supabase project URL: https://kfxndbjulmxbtyvtjbbi.supabase.co
 
 ## Usage
 
-*how to start and use the application, run the tests, ...*
+_how to start and use the application, run the tests, ..._
 
-* Clone this repository, from your local machine:
+- Clone this repository, from your local machine:
   ```
   git clone ...
   cd ...
   ```
-* Start the the application
+- Start the the application
   ```bash
   cd app
   # Install dependencies (use yarn or npm)
   npm install
   npm run build
-  npm start
+  npm run dev
   ```
-* Start Supabase
+- Start Supabase
   ```bash
   cd supabase
   docker compose up ...
@@ -33,55 +32,53 @@
 
 ## Authors
 
-*name, email, ...*
+_rgv176: MAHENTHIRAN Ragavi email: ragavimahenthiran@gmail.com_
+_eptect-lab: NGASSA TSALA Claude_
 
 ## Tasks
-  
+
 **Project management:**
 
-* Naming convention   
-  *place your graduation and comments*
-* Project structure   
-  *place your graduation and comments*
-* Git   
-  *place your graduation and comments*
-* Code quality   
-  *place your graduation and comments*
-* Design, UX, and content   
-  *place your graduation and comments*
+- Naming convention  
+  _A: all the commits follow the convention_
+- Project structure  
+  _B: maybe separate the dynamic fetch comments file with deleted articles_
+- Git  
+  _A: No problems with Git_
+- Code quality  
+  _B: Some errors_
+- Design, UX, and content  
+  _B: very simple design_
 
 **Application development:**
 
-* Home page   
-  *place your graduation and comments*
-* Login and profile page   
-  *place your graduation and comments*
-* New articles creation   
-  *place your graduation and comments*
-* New comment creation   
-  *place your graduation and comments*
-* Resource access control   
-  *place your graduation and comments*
-* Article modification   
-  *place your graduation and comments*
-* Article removal   
-  *place your graduation and comments*
-* Comment modification   
-  *place your graduation and comments*
-* Comment removal   
-  *place your graduation and comments*
-* Account settings   
-  *place your graduation and comments*
-* WYSIWYG integration   
-  *place your graduation and comments*
-* Gravatar integration   
-  *place your graduation and comments*
-* Light/dark theme   
-  *place your graduation and comments*
-* Accent color selection   
-  *place your graduation and comments*
+- Home page  
+  _A: evrything needed in the Home Page_
+- Login and profile page  
+  _A: You can login and see your informations_
+- New articles creation  
+  _A: you can create new articles if you login_
+- New comment creation  
+  _B: You can create new comments if you're login BUT there is some issues with the deployment (in the localhost it worked perfectly)_
+- Resource access control  
+  _A: OAuth authentification with github and email_
+- Article modification  
+  _B: There is some issue with the deployment but in localhost it's ok_
+- Article removal  
+  _A: you can delete if you're login_
+- Comment modification  
+  _F: not done_
+- Comment removal  
+  _F: not done_
+- Account settings  
+  _C: you can change your password with password forgot_
+- WYSIWYG integration  
+  _Not used_
+- Gravatar integration  
+  _Not used_
+- Light/dark theme  
+  _A: you can change the theme as you want in the header_
+- Accent color selection  
+  _..._
 
 ## Bonus
-
-* Task title   
-  *place your graduation and comments*

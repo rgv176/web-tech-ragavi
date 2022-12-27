@@ -31,13 +31,13 @@ export default function Article({ article }) {
         },
       ])
       .single();
-    if (error) console.log(error);
-    //setMessage("Sorry, an unexpected error occured. Be sure to be login !");
+    if (error)
+      setMessage("Sorry, an unexpected error occured. Be sure to be login !");
     else {
       setMessage(
         <div>
           <h2 className="text-center mt-3">Confirmation</h2>
-          <p>Thank you for adding an article.</p>
+          <p>Thank you for adding a comment.</p>
         </div>
       );
     }
