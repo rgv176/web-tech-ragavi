@@ -61,7 +61,7 @@ export default function Article({ article }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="wt-title">{article.title}</h1>
-      <p class>{article.message}</p>
+      <p>{article.message}</p>
       {user ? (
         <div className="inline-flex rounded-md shadow-sm" role="group">
           <button className="bg-transparent hover:bg-blue-500 text-grey-700 font-semibold hover:text-white py-2 px-4 border border-grey-500 hover:border-transparent rounded">
@@ -153,7 +153,7 @@ export async function getStaticPaths(ctx) {
   let { data, error, status } = await supabase.from("articles").select(`slug`);
   if (!error) articles = data; // handle errors
   return {
-    paths: articles.map(({ slug }) => ({ params: { slug: slug || "404" } })),
+    paths: articles.map((article) => `/articles/${article.slug}`),
     fallback: false,
   };
 }
