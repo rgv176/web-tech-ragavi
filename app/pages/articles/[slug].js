@@ -6,10 +6,10 @@ import Layout from "../../components/Layout.js";
 import { supabase } from "../api/supabase";
 
 export default function Article({ article }) {
+  const supabase = useSupabaseClient();
   const initialState = {
     content: "",
   };
-  const supabase = useSupabaseClient();
   const [articleData, setArticleData] = useState(initialState);
   const [message, setMessage] = useState(null);
   const user = useUser();
@@ -19,7 +19,7 @@ export default function Article({ article }) {
     setArticleData({ ...articleData, [e.target.name]: e.target.value });
   };
 
-  const createArticle = async () => {
+  const createComment = async () => {
     const { data, error } = await supabase
       .from("comments")
       .insert([
@@ -31,16 +31,16 @@ export default function Article({ article }) {
         },
       ])
       .single();
-    if (error)
-      setMessage("Sorry, an unexpected error occured. Be sure to be login !");
-
-    setMessage(
-      <div>
-        <h2 className="text-center mt-3">Confirmation</h2>
-        <p>Thank you for adding an article.</p>
-      </div>
-    );
-    router.push("/");
+    if (error) console.log(error);
+    //setMessage("Sorry, an unexpected error occured. Be sure to be login !");
+    else {
+      setMessage(
+        <div>
+          <h2 className="text-center mt-3">Confirmation</h2>
+          <p>Thank you for adding an article.</p>
+        </div>
+      );
+    }
   };
 
   const deleteArticle = async () => {
@@ -108,7 +108,7 @@ export default function Article({ article }) {
         <div>
           <button
             className="rounded py-1 px-3 text-white bg-slate-500 hover:bg-blue-500"
-            onClick={createArticle}
+            onClick={createComment}
           >
             Create comment
           </button>
