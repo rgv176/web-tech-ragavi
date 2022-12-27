@@ -36,7 +36,7 @@ export default function Contact() {
             Logout
           </button>
           <pre>
-            <code>{JSON.stringify(user, null, 2)}</code>
+            <code>{JSON.stringify(user, null, 1)}</code>
           </pre>
           <button
             className="rounded px-3 py-2 text-white bg-slate-500 hover:bg-blue-500"
