@@ -32,8 +32,9 @@ _how to start and use the application, run the tests, ..._
 
 ## Authors
 
--_rgv176: MAHENTHIRAN Ragavi email: ragavimahenthiran@gmail.com_
--_eptect-lab: NGASSA TSALA Claude_
+- _rgv176: MAHENTHIRAN Ragavi email: ragavimahenthiran@gmail.com_
+
+- _eptect-lab: NGASSA TSALA Claude_
 
 ## Tasks
 
